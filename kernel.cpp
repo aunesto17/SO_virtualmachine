@@ -22,7 +22,6 @@ extern "C" void callConstructors()
 
 extern "C" void kernelMain(const void* multiboot_structure, unsigned int /*multiboot_magic*/)
 {
-    printf("Kernel Sanpablo-OS! --- Alexander Baylon Ibanez");
-
+    printf("Kernel Sanpablo-OS! --- Alexander Arturo Baylon Ibanez");
     while(1);
 }
