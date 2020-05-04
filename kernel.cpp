@@ -1,3 +1,4 @@
+#include "gdt.h"
 
 void printf(char* str)
 {
@@ -23,5 +24,6 @@ extern "C" void callConstructors()
 extern "C" void kernelMain(const void* multiboot_structure, unsigned int /*multiboot_magic*/)
 {
     printf("Kernel Sanpablo-OS! --- Alexander Arturo Baylon Ibanez");
+    GlobalDescriptorTable gdt;
     while(1);
 }
