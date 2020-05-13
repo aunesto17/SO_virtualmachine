@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "gdt.h"
 #include "interrupts.h"
+#include "keyboard.h"
 
 void printf(char* str)
 {
@@ -62,7 +63,7 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t  /*multiboo
     // instanciar la tabla
     InterruptManager interrupts(&gdt);
     // instanciar el hardware y activarlo
-    
+    KeyboardDriver keyboard(&interrupts);
 
 
     interrupts.Activate();
