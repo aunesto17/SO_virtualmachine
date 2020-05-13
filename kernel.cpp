@@ -1,4 +1,6 @@
+#include <stdint.h>
 #include "gdt.h"
+#include "interrupts.h"
 
 void printf(char* str)
 {
@@ -55,6 +57,15 @@ extern "C" void kernelMain(const void* multiboot_structure, uint32_t  /*multiboo
 {
     printf("Kernel Sanpablo-OS! --- Alexander Arturo Baylon Ibanez\n");
     printf("Kernel Sanpablo-OS! --- Alexander Arturo Baylon Ibanez");
+
     GlobalDescriptorTable gdt;
+    // instanciar la tabla
+    InterruptManager interrupts(&gdt);
+    // instanciar el hardware y activarlo
+    
+
+
+    interrupts.Activate();
+
     while(1);
 }
